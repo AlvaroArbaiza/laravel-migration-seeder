@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Hotel;
+use App\Models\Train;
 use Faker\Generator as Faker;
 
 class TrainsTableSeeder extends Seeder
@@ -18,16 +18,16 @@ class TrainsTableSeeder extends Seeder
     {
         for($i = 0; $i < 10 ; $i++) {
 
-            $newHotel = new Hotel();
-            $newHotel->azienda = $faker->company();
-            $newHotel->stazione_di_partenza = $faker->streetAddress();
-            $newHotel->orario_di_partenza = $faker->time();
-            $newHotel->orario_di_arrivo = $faker->time();
-            $newHotel->codice_treno = $faker->regexify('[A-Z]{5}[0-4]{3}');
-            $newHotel->numero_carrozze = $faker->randomNumber(2, false);
-            $newHotel->in_orario = $faker->randomElement([true, false]);
-            $newHotel->cancellato = $faker->randomElement([true, false]);
-            $newHotel->save();
+            $newTrain = new Train();
+            $newTrain->azienda = $faker->company();
+            $newTrain->stazione_di_partenza = $faker->streetAddress();
+            $newTrain->orario_di_partenza = $faker->time();
+            $newTrain->orario_di_arrivo = $faker->time();
+            $newTrain->codice_treno = $faker->regexify('[A-Z]{5}[0-4]{3}');
+            $newTrain->numero_carrozze = $faker->randomNumber(2, false);
+            $newTrain->in_orario = $faker->randomElement([true, false]);
+            $newTrain->cancellato = $faker->randomElement([true, false]);
+            $newTrain->save();
         }
     }
 }
